@@ -7,7 +7,7 @@ Object-Oriented Programming
 
 [2] assert: Use it to suggest the condition for input parameters (Good to prevent the error at the beginning)
 
-[3] __repr__: Represent and assign unique name for the object
+[3] _ _ repr _ _: Represent and assign unique name for the object
 ```python
 def __repr__(self):
   return f"Item('{self.name}', {self.price}, {self.quantity})"
@@ -25,4 +25,4 @@ result
       assert price >= 0, f"Price {price} is not greater than zero"
       assert quantity >= 0, f"quantity {price} is not greater than zero"
 ```
-print(CLASS.__dict__): Show all the attribute
+print(CLASS._ _ dict _ _): Show all the attribute
