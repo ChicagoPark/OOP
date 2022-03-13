@@ -24,8 +24,11 @@ def __repr__(self):
       # Run validations to the received arguments
       assert price >= 0, f"Price {price} is not greater than zero"
       assert quantity >= 0, f"quantity {price} is not greater than zero"
+      
+      self.__name = name      # by adding __ in front of variable, we can prevent it to be changed strongly.
+                                # but we can edit __variable inside of the class by using function
 ```
-print(CLASS._ _ dict _ _): Show all the attribute
+print(CLASS_NAME._ _ dict _ _): Show all the attribute
 
 ## 2. Decorator
 Install the Plugin named "CSV"
@@ -53,11 +56,41 @@ class Item:
     '''
 ```
 ### Freeze the attributes
+```python
 @property
+# Property Decorator = Read-Only Attribute (We can set function name with variable name)
+def name(self):
+    return self.__name
+
+# name.setter Decorator = Write-Could-Be setting
+@name.setter  # @VARIABLE_NAME.setter
+def name(self, value):
+    if len(value) > 10:
+        raise Exception("The name is too long!")
+    self.__name = value
+```
+
+## 3. Inheritance
+```python
+from item import Item
+
+# inheritance
+class Phone(Item):
+    # super function is for inheritance, and we can add what we want to add.
+    def __init__(self, name: str, price=0, quantity=0, broken_phones=0):
+        # Call to super function to have access to all attributes / methods
+        super().__init__( # with __init__ we can call __init__ function in Item class
+                          # by listing the names, we can assign covering that process to parent class
+            name, price, quantity
+        )
+        assert broken_phones >= 0, f"quantity {broken_phones} is not greater than zero"
+        # Assign to self object
+        self.broken_phones = broken_phones
+```
 
 
 
-### Abstract(Hide) function: add _ _ in front of function name
+## 4. Abstract(Hide) function: add _ _ in front of function name
 ```python
     def __connect(self, smpt_server):
         pass
