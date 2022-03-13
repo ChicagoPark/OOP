@@ -12,8 +12,8 @@ Object-Oriented Programming
 def __repr__(self):
   return f"Item('{self.name}', {self.price}, {self.quantity})"
 ```
-`result`
 ```bash
+# print(Item.all)
 # When we generate 5 objects
 [Item('Phone', 100, 5), Item('Computer', 1000, 5), Item('Cable', 10, 5), Item('Mouse', 50, 5), Item('Keyboard', 75, 5)]
 ```
@@ -54,21 +54,7 @@ class Item:
     different structures of data to instantiate objects, like
     we have done with CSV.
     '''
-```
-### Freeze the attributes
-```python
-@property
-# Property Decorator = Read-Only Attribute (We can set function name with variable name)
-def name(self):
-    return self.__name
 
-# name.setter Decorator = Write-Could-Be setting
-@name.setter  # @VARIABLE_NAME.setter
-def name(self, value):
-    if len(value) > 10:
-        raise Exception("The name is too long!")
-    self.__name = value
-```
 
 ## 3. Inheritance
 ```python
@@ -92,6 +78,21 @@ class Phone(Item):
 
 ## 4. Abstract(Hide) function: add _ _ in front of function name
 ```python
+    #1. Abstract: Variable
+    @property
+    # Property Decorator = Read-Only Attribute (We can set function name with variable name)
+    def name(self):
+        return self.__name
+
+    # name.setter Decorator = Write-Could-Be setting
+    @name.setter  # @VARIABLE_NAME.setter
+    def name(self, value):
+        if len(value) > 10:
+            raise Exception("The name is too long!")
+        self.__name = value
+
+
+    #2. Abstract: Funcition
     def __connect(self, smpt_server):
         pass
 
