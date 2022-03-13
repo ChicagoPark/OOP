@@ -27,7 +27,7 @@ def __repr__(self):
 ```
 print(CLASS._ _ dict _ _): Show all the attribute
 
-## 2. CSV
+## 2. Decorator
 Install the Plugin named "CSV"
 
 classmethod: send the class as first argument
