@@ -52,3 +52,23 @@ class Item:
     we have done with CSV.
     '''
 ```
+### Freeze the attributes
+@property
+
+
+
+### Abstract(Hide) function: add _ _ in front of function name
+```python
+    def __connect(self, smpt_server):
+        pass
+
+    def __prepare_body(self):
+        return f"""
+        Hello Someone.
+        Wd have {self.name} {self.quantity} times.
+        Regards, JimShapedCoding
+        """
+    def send(self):
+        pass
+
+```
