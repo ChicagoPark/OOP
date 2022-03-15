@@ -102,8 +102,13 @@ class Phone(Item):
         Wd have {self.name} {self.quantity} times.
         Regards, JimShapedCoding
         """
-    def send(self):
+    def __send(self):
         pass
+
+    def send_email(self):
+        self.__connect('')
+        self.__prepare_body()
+        self.__send()
 
 ```
 
