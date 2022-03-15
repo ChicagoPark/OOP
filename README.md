@@ -25,7 +25,7 @@ def __repr__(self):
       assert price >= 0, f"Price {price} is not greater than zero"
       assert quantity >= 0, f"quantity {price} is not greater than zero"
       
-      self.__name = name      # by adding __ in front of variable, we can prevent it to be changed strongly.
+      self.__name = name      # by adding __ in front of variable, we can strongly prevent it to be changed .
                                 # but we can edit __variable inside of the class by using function
 ```
 print(CLASS_NAME._ _ dict _ _): Show all the attribute
