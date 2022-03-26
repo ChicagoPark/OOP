@@ -8,9 +8,17 @@ Object-Oriented Programming
 [2] assert: Use it to suggest the condition for input parameters (Good to prevent the error at the beginning)
 
 [3] _ _ repr _ _: Represent and assign unique name for the object
+
+[4] _ _iter_ _: Define the behavior when the class is mentioned in iteration (e.g. for i in CLASS)
 ```python
 def __repr__(self):
   return f"Item('{self.name}', {self.price}, {self.quantity})"
+ 
+def __iter__(self):
+  node = self.head
+  while node:
+    yield node
+    node = node.next
 ```
 ```bash
 # print(Item.all)
