@@ -7,10 +7,17 @@ Object-Oriented Programming
 
 [2] assert: Use it to suggest the condition for input parameters (Good to prevent the error at the beginning)
 
-[3] _ _ repr _ _: Represent and assign unique name for the object
+[3] _ _repr_ _: Represent and returns a string that describes the pointer of the object by default (if the programmer does not define it).
 
-[4] _ _iter_ _: Define the behavior when the class is mentioned in iteration (e.g. for i in CLASS)
+[4] _ _str_ _: represent the class object as a string. This method should be defined in a way that is easy to read and outputs all the members of the class. The _ _str_ _ method is called when the following functions(print() and str()) are invoked on the object and return a string. `If we have not defined` the _ _str_ _, then it will `call the _ _repr_ _ method`.
+
+`The difference between _ _repr_ _ and _ _str_ _ is that when _ _str_ _ is defined without _ _repr_ _, CLASS._ _repr_ _() indicate the pointer of the object. Except for that situation, all the actions are the same.`
+
+[5] _ _iter_ _: Define the behavior when the class is mentioned in iteration (e.g. for i in CLASS)
 ```python
+def __str__ (self):
+  return f"Item('{self.name}', {self.price}, {self.quantity})"
+
 def __repr__(self):
   return f"Item('{self.name}', {self.price}, {self.quantity})"
  
