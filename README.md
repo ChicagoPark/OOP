@@ -3,15 +3,20 @@ Object-Oriented Programming
 
 ## 1. Basic Class
 
-[1] self: the scale of generated instance by BOSS class
-
-[2] assert: Use it to suggest the condition for input parameters (Good to prevent the error at the beginning)
-
-[3] _ _repr_ _: Represent and returns a string that describes the pointer of the object by default (if the programmer does not define it).
-
-[4] _ _str_ _: represent the class object as a string. This method should be defined in a way that is easy to read and outputs all the members of the class. The _ _str_ _ method is called when the following functions(print() and str()) are invoked on the object and return a string. `If we have not defined` the _ _str_ _, then it will `call the _ _repr_ _ method`.
-
-`The difference between _ _repr_ _ and _ _str_ _ is that when _ _str_ _ is defined without _ _repr_ _, CLASS._ _repr_ _() indicate the pointer of the object. Except for that situation, all the actions are the same.`
+```python
+class Circle:
+  def __init__(self, radius=1.0):
+    """Initializer with default radius of 1.0"""
+    self.radius = radius
+  
+  def __str__(self):
+    """Return a descriptive string for this instance, invoked by print() and str()"""
+    return f"This is a circle with radius of {self.radius}"
+  
+  def __repr__(self):
+    """Return a formal string that can be used to re-create this instance, invoked by repr()"""
+    return f"Circle(radius={})"
+```
 
 [5] _ _iter_ _: Define the behavior when the class is mentioned in iteration (e.g. for i in CLASS)
 ```python
