@@ -19,13 +19,7 @@ class Circle:
 ```
 
 [5] _ _iter_ _: Define the behavior when the class is mentioned in iteration (e.g. for i in CLASS)
-```python
-def __str__ (self):
-  return f"Item('{self.name}', {self.price}, {self.quantity})"
-
-def __repr__(self):
-  return f"Item('{self.name}', {self.price}, {self.quantity})"
- 
+```python 
 def __iter__(self):
   node = self.head
   while node:
